@@ -5,7 +5,7 @@
 1. Open the main page of the application.
 2. Click on the **Computers** category.
 3. Click on the **Desktops** subcategory.
-4. Add the **first listed computer** to the shopping cart using the **default configuration**.
+4. Add the **Build your own cheap computer** to the shopping cart using the **default configuration**.
 5. Click on **Shopping Cart**.
 6. Verify that the selected computer is displayed in the shopping cart.
 7. Click **Edit** for the computer in the shopping cart.
@@ -15,7 +15,7 @@
 11. Select the **Image Viewer** option.
 12. Click **Update**.
 13. Click on **Shopping Cart**.
-14. Verify that the **updated specifications and price** are displayed correctly.
+14. Verify that the updated specifications are displayed correctly.
 15. Select the **Remove** checkbox for the product.
 16. Click **Update Shopping Cart**.
 17. Verify that the product is removed from the shopping cart.
