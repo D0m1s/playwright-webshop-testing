@@ -22,7 +22,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Install Playwright browsers
-        run: playwright install chromium --with-deps
+        run: playwright install
 
       - name: Run webshop tests
-        run: pytest test_webshop.py --browser chromium
+        run: pytest test_webshop.py
