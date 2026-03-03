@@ -39,7 +39,7 @@
 
 3. **Preconditions**  
    - Pytest and Playwright are installed  
-   - User has access to the Demo Web Shop homepage  
+   - User is logged out
    - Shopping cart is initially empty
 
 4. **Test Environment**  
@@ -48,14 +48,17 @@
    - Test Framework: Pytest with Playwright
 
 5. **Test Data**  
-   - Desktop product: *Build your own cheap computer*  
-   - Updated configuration options:  
-     - Processor = Fast  
-     - RAM = 4 GB  
-     - HDD = 400 GB  
-     - Image Viewer selected
-    - Desktop products with price greater than **$800**
-    - The first available specification option is selected
+   - CRUD test data is configured in data/shopping_cart.json
+   - Default configuration:
+      - Desktop product: *Build your own cheap computer*  
+      - Updated configuration options:  
+      - Processor = Fast  
+      - RAM = 4 GB  
+      - HDD = 400 GB  
+      - Image Viewer selected
+   - Bulk add test data:
+      - Desktop products with price greater than **$800**
+      - The first available specification option is selected
 
 6. **Navigation Steps**  
    Open homepage → Computers → Desktops → Product page → Shopping Cart
@@ -79,3 +82,4 @@
 
 10. **Postconditions**  
     - Shopping cart is empty
+    - User is logged out

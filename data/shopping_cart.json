@@ -1,0 +1,10 @@
+{
+    "computer_info": {
+        "computer_type": "Build your own expensive computer",
+        "specs": ["Slow", "8GB", "320 GB", "Other Office Suite"]
+    },
+    "login_info": {
+        "email": "secretemail@domain.com",
+        "password": "Password"
+    }
+}
