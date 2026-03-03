@@ -60,6 +60,7 @@ def test_shopping_cart_edit_flow(logged_in_page: Page) -> None:
         page.get_by_label(spec).check()
 
     page.get_by_role("button", name="Update").click()
+    page.wait_for_load_state("networkidle")
 
     open_cart(page)
     cart_row = page.locator("tr.cart-item-row")
