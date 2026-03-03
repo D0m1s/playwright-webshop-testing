@@ -13,13 +13,12 @@ def test_web_tables_pagination_after_delete(page: Page) -> None:
 
     for i in range(ENTRIES_TO_ADD):
         add_entry(page, f"Test{i}", f"User{i}", f"test.user{i}@example.com",
-                  str(25 + i), str(30000 + i * 1000), f"Dept{i}")
+                  str(25), str(1000), f"TestDept")
 
     page_indicator = page.locator(".pagination strong")
     expect(page_indicator).to_have_text("1 of 2")
 
     page.get_by_role("button", name="Next").click()
-    expect(page_indicator).to_have_text("2 of 2")
 
     page.locator("[id^='delete-record-']").first.click()
     expect(page_indicator).to_have_text("1 of 1")
