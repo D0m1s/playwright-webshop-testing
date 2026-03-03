@@ -49,6 +49,7 @@ def test_shopping_cart_edit_flow(logged_in_page: Page) -> None:
     page.locator(".product-title a", has_text=computer_type).click()
 
     page.locator("input.add-to-cart-button").click()
+    expect(page.locator("#bar-notification.success")).to_be_visible()
 
     open_cart(page)
     cart_row = page.locator("tr.cart-item-row")
@@ -87,19 +88,22 @@ def test_bulk_add_by_price(logged_in_page: Page) -> None:
 
     for name in bulk_product_names:
         page.get_by_role("link", name=name, exact=True).click()
-        
-        for dropdown in page.locator(".attributes select").all():
-            dropdown.select_option(index=1)
-        
+        page.wait_for_load_state("domcontentloaded")
+
+        selects = page.locator(".attributes select")
+        if selects.count() > 0:
+            selects.first.wait_for(state="visible")
+            for dropdown in selects.all():
+                dropdown.select_option(index=1)
+
         for radio_group in page.locator(".attributes .option-list").all():
             first_radio = radio_group.locator("input[type='radio']").first
             if first_radio.count() > 0:
                 first_radio.check()
 
         page.locator(".add-to-cart-button").first.click()
-        
-        expect(page.locator("#bar-notification")).to_be_visible()
-        page.locator("#bar-notification").press("Escape")
+
+        expect(page.locator("#bar-notification.success")).to_be_visible()
         go_to_desktops(page)
 
     open_cart(page)
